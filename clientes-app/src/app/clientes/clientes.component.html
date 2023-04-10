@@ -1,0 +1,31 @@
+<div class="container">
+
+      <form class="d-flex">
+        <input class="form-control me-3" spellcheck="false" type="text" placeholder="Enter shared key" name="search" [(ngModel)]="searchText">
+      </form>
+    
+      <h2 class="text-secondary mt-5 mb-3">Clients</h2>
+      <table class="table table-bordered border-dark table-light table-striped table-hover table-md">
+        <thead>
+          <tr class="table-secondary">
+            <th>Shared Key</th>
+            <th>Business ID</th>
+            <th>E-mail</th>
+            <th>Phone</th>
+            <th>Date Added</th>
+            <th><i class="fa-solid fa-pen-to-square text-dark"></i></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clientes | search:searchText">
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nombre}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.telefono}}</td>
+            <td>{{cliente.fecha}}</td>
+            <td><a><i class="fa-solid fa-pen-to-square text-dark"></i></a></td>   
+          </tr>
+        </tbody>
+      </table>
+</div>
+
